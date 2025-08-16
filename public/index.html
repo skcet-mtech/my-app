@@ -17,12 +17,17 @@
       e.preventDefault();
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData.entries());
-      await fetch("/save", {
+      const res = await fetch("/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
-      alert("Data saved!");
+      const result = await res.json();
+      if(result.success){
+        alert("Data saved successfully!");
+      } else {
+        alert("Error: " + result.error);
+      }
     });
   </script>
 </body>
