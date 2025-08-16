@@ -15,7 +15,7 @@ const db = await mysql.createConnection({
   port: 20122,
   user: "avnadmin",
   password: "AVNS_5OP6XXy0AD0bh_ZHxeE",
-  database: "defaultdb",
+  database: "students",
   ssl: {
     rejectUnauthorized: true // Aiven requires SSL
   }
